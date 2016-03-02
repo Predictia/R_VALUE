@@ -4,6 +4,7 @@ Depends:
 Imports:
     utils,
     abind,
+    methods,
     evd
 Type: Package
 Title: Climate data validation in the framework of the COST action VALUE
