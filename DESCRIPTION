@@ -1,9 +1,9 @@
 Package: R.VALUE
 Depends:
-    R(>= 3.0.0),
-    abind
+    R(>= 3.0.0)
 Imports:
     utils,
+    abind,
     evd
 Type: Package
 Title: Climate data validation in the framework of the COST action VALUE
