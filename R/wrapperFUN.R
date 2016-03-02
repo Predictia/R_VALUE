@@ -80,8 +80,12 @@ wrapperFUN <- function(metric = c("obs", "pred", "measure"),
       season <- match.arg(arg = season, choices = c("annual", "DJF", "MAM", "JJA", "SON"), several.ok = TRUE)
       aggr.type <- match.arg(arg = aggr.type, choices = c("before", "after"))
       suffix <- "\\.R$|\\.r$"
-      index.fun <- if (grepl(suffix, index.fun)) gsub(suffix, "", index.fun)
-      measure.fun <- if (grepl(suffix, measure.fun)) gsub(suffix, "", measure.fun)
+      if(!is.null(index.fun)){
+        index.fun <- if (grepl(suffix, index.fun)) gsub(suffix, "", index.fun)
+      }
+      if(!is.null(measure.fun)){
+        measure.fun <- if (grepl(suffix, measure.fun)) gsub(suffix, "", measure.fun)
+      }
       message("[", Sys.time(), "] Intersecting obs and pred...")
       int <- getIntersect(o,p)
       o <- dimFix(int$obs)
